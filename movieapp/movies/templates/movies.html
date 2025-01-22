@@ -1,0 +1,23 @@
+<h1>movie list</h1>
+
+<ul>
+    {% for kategori in kategoriler %}
+
+    <li>
+        {{kategori}}
+    </li>
+
+    {% endfor %}
+</ul>
+
+<div id="filmler">
+
+    {% for film in filmler %}
+    <div id="box1" style="border: 1px solid black;">
+        <p>{{film.film_adi}}</p>
+        <p>{{film.film_aciklama}}</p>
+        <img src="{{film.film_resim}}">
+    </div>
+    {% endfor %}
+
+</div>
