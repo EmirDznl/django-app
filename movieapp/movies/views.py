@@ -5,22 +5,26 @@ film_liste = [
     {
         "film_adi": "film1",
         "film_aciklama": "aciklama1",
-        "film_resim": "https://picsum.photos/id/237/200/300"
+        "film_resim": "1.jpeg"
     },
         {
         "film_adi": "film2",
         "film_aciklama": "aciklama2",
-        "film_resim": "https://picsum.photos/id/237/200/300"
+        "film_resim": "2.jpeg"
     },
         {
         "film_adi": "film3",
         "film_aciklama": "aciklama3",
-        "film_resim": "https://picsum.photos/id/237/200/300"
+        "film_resim": "3.jpeg"
     },
 
 ]
 def home(request):
-    return(render(request, "index.html"))
+    data = {
+        "kategoriler": kategori_liste,
+        "filmler": film_liste
+    }
+    return(render(request, "index.html", data))
 
 def movies(request):
     
