@@ -14,30 +14,22 @@
     <div class="container mt-3">
         <div class="row">
             <div class="col-3">
-                <div class="list-group">
+                <div class="list-group mt-5">
                     
                     {% for kategori in kategoriler %}
                     <a href="#" class="list-group-item list-group-item-action active">
-                      {{kategori}}
+                      {{kategori.name}}
                     </a>
                     {%endfor%}
 
                   </div>
             </div>
+
             <div class="col-9">
-                <div class="row">
+                <div class="row mt-5">
                     {% for film in filmler %}
                     <div class="col-4">
-                        
-                        
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="{% static 'img/'|add:film.film_resim %}" alt="Card image cap">
-                            <div class="card-body">
-                              <h5 class="card-title">{{film.film_adi}}</h5>
-                              <p class="card-text">{{film.film_aciklama}}</p>
-                              <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
+                        {% include 'partials/_card.html' %}
                     </div>
                     {% endfor %}
                 </div>
